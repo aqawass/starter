@@ -42,8 +42,44 @@ Route::get('/show-string/{id?}', function () {
 
 
 //route namespaces
-Route::namespace('Front')->group(function(){
+/* Route::namespace('Front')->group(function(){
     //all route only access controller or method in folder name Front
     //Route::get('users', 'Front\UserController@showAdminName' );  //if namespaces('') is empty we should put full path
     Route::get('users', 'UserController@showUserName' );
 });
+ */
+
+/*  //Route group
+ //this method make easy not write users in eash url
+Route::prefix('users')->group(function(){
+    //if use prefix('') ,we should put as
+    //Route::get('users\show', 'UserController@showUserName');
+
+    Route::get('show', 'Front\UserController@showUserName');
+    Route::delete('delete', 'UserController@showUserName');
+    Route::get('edit', 'UserController@showUserName');
+    Route::put('update', 'UserController@showUserName');
+}); */
+
+Route::group(['prefix' => 'users' , 'middleware' => 'auth'], function() {
+
+    Route::get('/', function () {
+        return 'work';
+    });
+    Route::get('show', 'Front\UserController@showUserName');
+    Route::delete('delete', 'Front\UserController@showUserName');
+    Route::get('edit', 'Front\UserController@showUserName');
+    Route::put('update', 'Front\UserController@showUserName');
+});
+
+
+
+Route::get('check', function () {
+    return 'middleware';
+}) -> middleware('auth');
+
+
+
+
+
+
