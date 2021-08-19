@@ -39,3 +39,11 @@ Route::get('/show-number/{id}', function ($id) {
 Route::get('/show-string/{id?}', function () {
     return 'welcome 6';
 }) -> name('b');
+
+
+//route namespaces
+Route::namespace('Front')->group(function(){
+    //all route only access controller or method in folder name Front
+    //Route::get('users', 'Front\UserController@showAdminName' );  //if namespaces('') is empty we should put full path
+    Route::get('users', 'UserController@showUserName' );
+});
