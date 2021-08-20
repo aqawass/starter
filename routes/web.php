@@ -81,5 +81,8 @@ Route::get('check', function () {
 
 
 
+//Route::get('second' ,'Admin\SecondController@showString');
 
-
+Route::group(['namespace'=>'Admin'],function () {
+    Route::get('second' ,'SecondController@showString');
+});
