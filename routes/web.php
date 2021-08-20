@@ -93,15 +93,17 @@ Route::get('login', function () {
     return 'Should be login ...';
 })->name('login');
 
-Route::get('users', 'UserController@index') ;
+// Route::get('users', 'UserController@index') ;
 
-Route::group(['middleware'=>'auth'],function () {
+/* Route::group(['middleware'=>'auth'],function () {
     Route::get('users' ,'SecondController@index');
-});
+}); */
 
+Route::resource('news', 'NewsController');
 
-
-
-
-
-
+/* Route::get('news','NewsController@show');
+Route::post('news','NewsController@store');
+Route::get('news/create','NewsController@create');
+Route::get('news/{id}/edit','NewsController@edit');
+Route::post('update/{id}','NewsController@update');
+Route::delete('news/{id}','NewsController@delete'); */
