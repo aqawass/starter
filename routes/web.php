@@ -72,17 +72,36 @@ Route::group(['prefix' => 'users' , 'middleware' => 'auth'], function() {
     Route::put('update', 'Front\UserController@showUserName');
 });
 
-
-
 Route::get('check', function () {
     return 'middleware';
 }) -> middleware('auth');
 
-
-
-
 //Route::get('second' ,'Admin\SecondController@showString');
-
-Route::group(['namespace'=>'Admin'],function () {
+/* Route::group(['namespace'=>'Admin'],function () {
     Route::get('second' ,'SecondController@showString');
 });
+ */
+///////////
+
+Route::group(['namespace'=>'Admin'],function () {
+    Route::get('second' ,'SecondController@showString0') -> middleware('auth');
+    Route::get('second1' ,'SecondController@showString1');
+    Route::get('second2' ,'SecondController@showString2');
+});
+
+Route::get('login', function () {
+    return 'Should be login ...';
+})->name('login');
+
+Route::get('users', 'UserController@index') ;
+
+Route::group(['middleware'=>'auth'],function () {
+    Route::get('users' ,'SecondController@index');
+});
+
+
+
+
+
+
+
