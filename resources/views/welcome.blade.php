@@ -83,8 +83,30 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-                <p>{{$obj->name}}-{{$obj->id}}</p>
+{{--                 <p>{{$obj->name}}-{{$obj->id}}</p> --}}
                 <h1>{{__('messages.welcome')}}</h1>
+{{--                 @if ($name == "Ali")
+                    <p>yes i am Ali</p>
+                @else
+                    <p>no i am Ali</p>
+                @endif --}}
+
+                @foreach ($data as $val )
+                    <p>{{$val}}</p>
+                @endforeach
+
+{{--            @forelse ($data as $val)
+                    <p>{{$val}}</p>
+                @empty
+                    <p>Empty</p>
+                @endforelse --}}
+{{--                 @if ($name == "Ali")
+
+                @elseif ($name == "Aziz")
+
+                @elseif ($name == "Ahmad")
+
+                @endif --}}
             </div>
         </div>
     </body>
