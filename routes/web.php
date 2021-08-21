@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/test1', function () {
     return 'Welcome...';
 });
@@ -107,3 +108,7 @@ Route::get('news/create','NewsController@create');
 Route::get('news/{id}/edit','NewsController@edit');
 Route::post('update/{id}','NewsController@update');
 Route::delete('news/{id}','NewsController@delete'); */
+
+
+
+Route::get('index','Front\UserController@getIndex');

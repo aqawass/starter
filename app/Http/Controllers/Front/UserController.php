@@ -13,4 +13,8 @@ class UserController extends Controller
         return 'Ahmad Emam';
     }
 
+    public function getIndex() {
+        return view('welcome');
+    }
+
 }
