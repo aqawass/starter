@@ -91,9 +91,9 @@
                     <p>no i am Ali</p>
                 @endif --}}
 
-                @foreach ($data as $val )
+{{--                 @foreach ($data as $val )
                     <p>{{$val}}</p>
-                @endforeach
+                @endforeach --}}
 
 {{--            @forelse ($data as $val)
                     <p>{{$val}}</p>

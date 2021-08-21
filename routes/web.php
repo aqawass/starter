@@ -12,10 +12,11 @@
 */
 
 Route::get('/', function () {
-    $data=[];
-    $data['id']=5;
-    $data['name']='Aziz';
-    return view('welcome',$data);
+    // $data=[];
+    // $data['id']=5;
+    // $data['name']='Aziz';
+    // return view('welcome',$data);
+    return view('welcome');
 });
 
 Route::get('/landing', function () {
@@ -121,3 +122,11 @@ Route::delete('news/{id}','NewsController@delete'); */
 
 
 Route::get('index','Front\UserController@getIndex');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
