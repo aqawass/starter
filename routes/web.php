@@ -25,7 +25,9 @@ Route::get('/landing', function () {
 Route::get('/test1', function () {
     return 'Welcome...';
 });
-
+Route::get('/about', function () {
+    return view('about');
+});
 //route parameters
 
 //requir param
