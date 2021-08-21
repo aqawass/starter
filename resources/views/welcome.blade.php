@@ -84,7 +84,7 @@
                     Laravel
                 </div>
                 <p>{{$obj->name}}-{{$obj->id}}</p>
-                {{URL::asset('css/styles.css')}}
+                <h1>{{__('messages.welcome')}}</h1>
             </div>
         </div>
     </body>
