@@ -12,7 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $data=[];
+    $data['id']=5;
+    $data['name']='Aziz';
+    return view('welcome',$data);
+});
+
+Route::get('/landing', function () {
+    return view('landing');
 });
 
 Route::get('/test1', function () {
